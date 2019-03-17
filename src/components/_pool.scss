@@ -1,0 +1,33 @@
+// Container of all pool information
+.pool-info {
+  padding: 0.5rem 1rem;
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+// Label for pool type (Might, Speed, Intellect)
+.pool-type {
+  
+}
+
+// Label for Pool & Edge
+.pool-edge-bar {
+  // Pool span
+  .pool{}
+
+  // Edge span
+  .edge{}
+}
+
+// Container for Increment/Decrement Buttons 
+.button-group {
+  // Increment Button
+  .increment{
+    
+  }
+  
+  // Decrement Button
+  .decrement{
+    
+  }
+}
