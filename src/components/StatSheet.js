@@ -1,17 +1,18 @@
 import React from 'react';
 import Pool from './Pool';
+import './_statSheet.scss';
 
 export default function StatSheet(props) {
   return (
     <div className="stat-sheet">
       {/* Experience Points */}
       <label className="xp">
-        XP: {props.xp}
+        {props.xp}
       </label>
       <br />
       {/* Effort Points */}
-      <label>
-        Effort: {props.effort}
+      <label className="effort">
+        {props.effort}
       </label>
 
       {/* Character Stat Pools */}

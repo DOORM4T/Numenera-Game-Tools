@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import StatSheet from './StatSheet';
+import './_characterInfo.scss';
 
 // Character Component
 export default function CharacterInfo(props) {

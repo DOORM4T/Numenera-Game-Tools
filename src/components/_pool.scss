@@ -1,33 +1,78 @@
 // Container of all pool information
 .pool-info {
-  padding: 0.5rem 1rem;
-  border: 1px solid #000;
-  border-radius: 4px;
-}
-
-// Label for pool type (Might, Speed, Intellect)
-.pool-type {
+  display:flex;
+  flex-wrap: wrap;  
   
-}
+  border-radius: 4px;
 
-// Label for Pool & Edge
-.pool-edge-bar {
-  // Pool span
-  .pool{}
+  // Label for pool type (Might, Speed, Intellect)
+  .pool-type {
+    margin-right:auto;
+    font-weight: 800;
 
-  // Edge span
-  .edge{}
-}
-
-// Container for Increment/Decrement Buttons 
-.button-group {
-  // Increment Button
-  .increment{
-    
+    &:after{
+      content:": "
+    }
   }
   
-  // Decrement Button
-  .decrement{
+  // Label for Pool & Edge
+  .pool-edge-bar {
+    color:#fff;
+    font-weight:800;
     
+    // Pool span
+    .pool{
+      background-color: blue;
+      border-radius: 4px 0 0 4px;
+      padding:0 0.5rem;
+    }
+  
+    // Edge span
+    .edge{
+      margin-left:2px;
+      background-color: red;
+      border-radius: 0 4px 4px 0;
+      padding:0 0.5rem;
+    }
+  }
+  
+  // Container for Increment/Decrement Buttons 
+  .button-group {
+    width:100%;
+    
+
+    // Increment Button
+    .increment{
+      background-color:green;
+      color:#fff;
+      font-weight:800;
+      border-radius:8px 0 0 8px;
+      border:none;
+      border-bottom:4px solid darken(green,20);
+      padding:0.3rem 0.8rem;
+      cursor:pointer;
+
+      &:active{
+        transition: background-color 0.1s ease-out;
+        background-color:darken(green,20);
+      }
+    }
+    
+    // Decrement Button
+    .decrement{
+      background-color:red;
+      color:#fff;
+      font-weight:800;
+      border-radius:0 8px 8px 0;
+      border:none;
+      border-bottom:4px solid darken(red,20);
+      padding:0.3rem 0.8rem;
+      cursor:pointer;
+
+      &:active{
+        transition: background-color 0.1s ease-out;
+        background-color:darken(red,20);
+      }
+    }
   }
 }

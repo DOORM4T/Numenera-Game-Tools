@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PartyList from './components/PartyList';
 import CharacterInfo from './components/CharacterInfo';
 import './app.scss';
 
@@ -23,33 +22,35 @@ export default function App() {
       speedEdge: 1,
       intEdge: 0,
     }));
-    console.log(party)
   }
 
   return (
     <div className="App">
-      <h1>Numenera App</h1>
+      <h1 id="title">Numenera Game Tools</h1>
       <button onClick={() => addMember()}>Add Member</button>
       {/* List of Party Members */}
-      {
-        party.map((member, index) =>
-          <CharacterInfo
-            key={index}
-            name={member.name}
-            job={member.job}
-            descriptors={member.descriptors}
-            foci={member.foci}
-            xp={member.xp}
-            effort={member.effort}
-            mightPool={member.mightPool}
-            speedPool={member.speedPool}
-            intPool={member.intPool}
-            mightEdge={member.mightEdge}
-            speedEdge={member.speedEdge}
-            intEdge={member.intEdge}
-          />
-        )
-      }
+      <ul id="party-list">
+        {
+          party.map((member, index) =>
+            <li key={index}>
+              <CharacterInfo
+                name={member.name}
+                job={member.job}
+                descriptors={member.descriptors}
+                foci={member.foci}
+                xp={member.xp}
+                effort={member.effort}
+                mightPool={member.mightPool}
+                speedPool={member.speedPool}
+                intPool={member.intPool}
+                mightEdge={member.mightEdge}
+                speedEdge={member.speedEdge}
+                intEdge={member.intEdge}
+              />
+            </li>
+          )
+        }
+      </ul>
 
     </div>
   )

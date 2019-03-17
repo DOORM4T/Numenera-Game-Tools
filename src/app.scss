@@ -1,7 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Niconne');
 
 * {
+  // Font
   font-family:'Cinzel',serif;
+
+  // Page Setup
   margin:0;
   padding:4px;
+}
+
+body {
+  // Background Image
+  // Background Source: https://www.pexels.com/photo/abstract-ancient-antique-art-235985/
+  background-image:url('./assets/map-texture.jpg');
+  background-size: fit;
+
+  #title{
+    font-weight:800;
+    text-align:center;
+    color: #fff;
+    opacity:0.9;
+  }
+
+    #party-list {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content: space-evenly;
+      list-style: none;
+    }
 }

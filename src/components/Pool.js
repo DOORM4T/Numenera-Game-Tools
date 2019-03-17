@@ -15,13 +15,13 @@ export default function Pool(props) {
 
   return (
     <div className="pool-info">
-      <label className="pool-type">{type}:</label>
+      <label className="pool-type">{type}</label>
       <label className="pool-edge-bar">
-        <span className="pool">{count} | </span>
+        <span className="pool">{count}</span>
 
         <span className="edge">{edge}</span>
       </label>
-
+      <br />
       <div className="button-group">
         <button className="increment" onClick={() => setCount(count + 1)}>+</button>
         <button className="decrement" onClick={() => setCount(count - 1)}>-</button>
