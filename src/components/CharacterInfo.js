@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import StatSheet from './StatSheet';
 
 // Character Component
@@ -14,7 +14,7 @@ export default function CharacterInfo(props) {
   // Effort Points
   const [effort] = useState(props.effort);
   // Experience Points
-  const [xp, setXP] = useState(props.xp);
+  const [xp] = useState(props.xp);
   // Might Pool
   const [mightPool] = useState(props.mightPool);
   // Speed Pool

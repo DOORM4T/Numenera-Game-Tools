@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Pool from './Pool';
 
 export default function StatSheet(props) {
