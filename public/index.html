@@ -7,12 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="theme-color" content="#000000" />
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <title>Numenera Game Tools</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Tabletop Tavern</title>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let elems = document.querySelectorAll('.modal');
+      let instances = M.Modal.init(elems, {
+      });
+      let elems2 = document.querySelectorAll('.select');
+      let instances2 = M.FormSelect.init(elems2, {
+      });
+      // let elems = document.querySelectorAll('.collapsible');
+      // let instances = M.Collapsible.init(elems, {
+      //   accordion: true
+      // });
+    })
+  </script>
 </body>
 
 </html>
