@@ -80,3 +80,18 @@
   line-height:24px;
 }
 
+// Transition Group: Member Card Fade Animations
+.member-enter {
+  opacity: 0;
+}
+.member-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+// .member-exit {
+//   opacity: 1;
+// }
+// .member-exit-active {
+//   opacity: 0;
+//   transition: opacity 200ms ease-out;
+// }

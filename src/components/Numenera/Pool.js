@@ -19,19 +19,24 @@ export default function Pool(props) {
   }
 
   return (
-    <div className="collection-item">
-      {/* Pool Type -- @TODO: Replace with icons! */}
-      <p className="rotated">{type}</p>
-      <p className="">
-        <span className="ml-2">
-          <span className="">
-            <button className="mr-1 red white-text btn waves-effect waves-dark smaller" onClick={() => updatePool(-1)}><i className="material-icon">-</i></button>
-            {(count) < 10 ? "0" + count : count}
-            <button className="ml-1 green white-text btn waves-effect waves-light smaller" onClick={() => updatePool(+1)}><i className="material-icon">+</i></button>
-          </span>
-          <span className="right">Edge: {edge}</span>
+    <div className={`collection-item ${count === 0 ? 'red darken-3' : ''}`}>
+      <i className="material-icons left">
+        {
+          (type === 'might')
+            ? 'fitness_center'
+            : (type === 'speed')
+              ? 'directions_run'
+              : 'school'
+        }
+      </i>
+      <span className="ml-1">
+        <span className="">
+          <button className="red white-text btn waves-effect waves-dark smaller" onClick={() => updatePool(-1)}><i className="material-icon">-</i></button>
+          {(count) < 10 ? "0" + count : count}
+          <button className="green white-text btn waves-effect waves-light smaller" onClick={() => updatePool(+1)}><i className="material-icon">+</i></button>
         </span>
-      </p>
+        <span className="right"><i className="material-icons">arrow_upward</i>{edge}</span>
+      </span>
     </div>
   )
 }

@@ -29,6 +29,9 @@ export default function Layout() {
   }
 
   const removeMember = (id) => {
+    let confirmation = window.confirm(`Are you sure you want to remove ${party.filter(member => member.id === id)[0].name}?`);
+    if (confirmation === false)
+      return;
     let members = party.filter(member => member.id !== id);
     setParty(members);
   }

@@ -8,9 +8,9 @@ export default function StatSheet(props) {
       <br />
       {/* Character Stat Pools */}
       <div className="collection">
-        <Pool type="Mgt" edge={props.mightEdge} max={props.mightPool} />
-        <Pool type="Spd" edge={props.speedEdge} max={props.speedPool} />
-        <Pool type="Int" edge={props.intEdge} max={props.intPool} />
+        <Pool type="might" edge={props.mightEdge} max={props.mightPool} />
+        <Pool type="speed" edge={props.speedEdge} max={props.speedPool} />
+        <Pool type="int" edge={props.intEdge} max={props.intPool} />
       </div>
     </div>
   )
