@@ -16,7 +16,6 @@ export default function Pool(props) {
       setCount(count + amt);
   }
 
-  console.log(props.diff)
   // Use Context to update member state with updateMember
   // Used to save current pool values
   const updateMember = useContext(UpdateContext);

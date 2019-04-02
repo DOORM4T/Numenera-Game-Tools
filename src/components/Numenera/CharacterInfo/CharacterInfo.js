@@ -3,7 +3,6 @@ import StatSheet from './StatSheet';
 
 // Character Component
 export default function CharacterInfo(props) {
-  console.log(props)
   return (
     <div className="card z-depth-2 hoverable" key={props.id}>
       <div className="card-title p-1 pr-2">
