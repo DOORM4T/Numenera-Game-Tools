@@ -11,6 +11,13 @@
   font-family:'Cinzel',serif;
 }
 
+
+html {
+  background-color:#222222;
+}
+
+
+
 // Niconne Font
 .niconne {
   font-family: 'Niconne';
@@ -43,6 +50,13 @@
   }
 }
 
+.mt-half {
+  margin-top:0.5rem;
+}
+.mr-half {
+  margin-right:0.5rem;
+}
+
 // Padding Classes
 @for $i from 1 through 100 {
   .pt-#{$i} {
@@ -70,11 +84,6 @@
   }
 }
 
-// Round
-.smaller {
-  transform:scale(0.8);
-}
-
 // Pool Titles
 .rotated {
   position: absolute;
@@ -100,3 +109,12 @@
 //   opacity: 0;
 //   transition: opacity 200ms ease-out;
 // }
+
+
+.smaller {
+  transform:scale(0.5,0.6);
+}
+
+.material-icons{
+  user-select:none;
+}

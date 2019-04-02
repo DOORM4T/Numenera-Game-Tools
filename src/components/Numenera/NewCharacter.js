@@ -1,3 +1,4 @@
+// Component for adding new characters to the party
 import React, { useState } from 'react'
 
 export default function NewCharacter(props) {
@@ -16,18 +17,19 @@ export default function NewCharacter(props) {
   //   intEdge: 0,
   // });
 
-  const [name, setName] = useState();
-  const [job, setJob] = useState();
-  const [descriptors, setDescriptors] = useState();
-  const [foci, setFoci] = useState();
+  const [name, setName] = useState('Unnamed Character');
+  const [job, setJob] = useState('Glaive');
+  const [descriptors, setDescriptors] = useState('[...]');
+  const [foci, setFoci] = useState('[...]');
+  const [level, setLevel] = useState(1);
   const [xp, setXP] = useState(0);
   const [effort, setEffort] = useState(1);
-  const [mightPool, setMightPool] = useState();
-  const [speedPool, setSpeedPool] = useState();
-  const [intPool, setIntPool] = useState();
-  const [mightEdge, setMightEdge] = useState();
-  const [speedEdge, setSpeedEdge] = useState();
-  const [intEdge, setIntEdge] = useState();
+  const [mightPool, setMightPool] = useState(10);
+  const [speedPool, setSpeedPool] = useState(10);
+  const [intPool, setIntPool] = useState(10);
+  const [mightEdge, setMightEdge] = useState(0);
+  const [speedEdge, setSpeedEdge] = useState(0);
+  const [intEdge, setIntEdge] = useState(0);
 
   const handleSubmit = () => {
     const newMember = {
@@ -35,6 +37,7 @@ export default function NewCharacter(props) {
       job,
       descriptors,
       foci,
+      level: parseInt(level),
       xp: parseInt(xp),
       effort: parseInt(effort),
       mightPool: parseInt(mightPool),
@@ -44,10 +47,6 @@ export default function NewCharacter(props) {
       speedEdge: parseInt(speedEdge),
       intEdge: parseInt(intEdge),
     };
-    // for (let attr in newMember) {
-    //   if (newMember.attr === null || newMember.attr === undefined)
-    //     return;
-    // }
     props.addMember(newMember);
   }
 
@@ -70,6 +69,7 @@ export default function NewCharacter(props) {
                   <option value="Glaive">Glaive</option>
                   <option value="Nano">Nano</option>
                   <option value="Jack">Jack</option>
+                  <option value="Other">Other</option>
                 </select>
                 {/* <input required id="job" type="text" onChange={(e) => setJob(e.target.value)}></input> */}
                 <label htmlFor="job">Job</label>
@@ -86,13 +86,18 @@ export default function NewCharacter(props) {
               <label htmlFor="foci">Foci</label>
             </div>
             <div className="row">
+              {/* level */}
+              <div className="col s4 input-field">
+                <input required id="level" type="text" onChange={(e) => setLevel(e.target.value)}></input>
+                <label htmlFor="level">Level</label>
+              </div>
               {/* xp */}
-              <div className="col s6 input-field">
+              <div className="col s4 input-field">
                 <input required id="xp" type="text" onChange={(e) => setXP(e.target.value)}></input>
                 <label htmlFor="xp">XP</label>
               </div>
               {/* effort */}
-              <div className="col s6 input-field">
+              <div className="col s4 input-field">
                 <input required id="effort" type="text" onChange={(e) => setEffort(e.target.value)}></input>
                 <label htmlFor="effort">Effort</label>
               </div>
