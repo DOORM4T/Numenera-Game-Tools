@@ -1,5 +1,5 @@
 # Tabletop Tavern
-## A 'Drunken Headhunters' project
+A "Drunken Headhunters" project
 
 ## Features
 ### Numenera Game Tools
@@ -15,5 +15,6 @@
 - Dice Roller
 - D&D Game Tools!
 - Database & User Auth?
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
