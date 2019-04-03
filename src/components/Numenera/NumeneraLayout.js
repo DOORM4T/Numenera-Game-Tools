@@ -11,7 +11,7 @@ export const UpdateContext = createContext();
 export default function NumeneraLayout() {
   // List of Party Members
   const [party, setParty] = useState([]);
-  const [modal, showModal] = useState(true);
+  const [modal, showModal] = useState(false);
   const [editMember, setEditMember] = useState({});
 
   // Function for Creating New Party Members
@@ -28,9 +28,9 @@ export default function NumeneraLayout() {
       mightPool: member.mightPool,
       speedPool: member.speedPool,
       intPool: member.intPool,
-      mightDiff: 0,
-      speedDiff: 0,
-      intDiff: 0,
+      mightCurrent: member.mightPool,
+      speedCurrent: member.speedPool,
+      intCurrent: member.intPool,
       mightEdge: member.mightEdge,
       speedEdge: member.speedEdge,
       intEdge: member.intEdge,
@@ -39,7 +39,7 @@ export default function NumeneraLayout() {
 
   // Function for Removing Party Members
   const removeMember = (id) => {
-    let confirmation = window.confirm(`Are you sure you want to remove ${party.filter(member => member.id === id)[0].name}?`);
+    let confirmation = window.confirm(`Are you sure you want to remove ${party.find(member => member.id === id).name}?`);
     if (confirmation === false)
       return;
     let members = party.filter(member => member.id !== id);
@@ -93,9 +93,7 @@ export default function NumeneraLayout() {
         {/* Modal Form for new party members */}
         <NewCharacter addMember={addMember} />
         {/* Edit Modal */}
-        {
-          (modal && Object.keys(editMember).length > 0) ? <EditModal member={editMember} updateMember={updateMember} showModal={showModal} /> : ''
-        }
+        <EditModal member={editMember} updateMember={updateMember} show={modal} />
         {/* Party List */}
         <Party party={party} removeMember={removeMember} showEdit={showEdit} />
       </div>
