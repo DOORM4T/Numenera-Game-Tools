@@ -10,6 +10,10 @@ export default function App() {
   // Load Materialize JS on mount
   useEffect(() => {
     M.AutoInit();
+    M.Modal.init(document.querySelectorAll('.modal'), {
+      inDuration: 0,
+      outDuration: 0
+    });
   }, []);
 
   return (

@@ -29,7 +29,7 @@ html, body {
 // Margin Classes
 @for $i from -100 through 100 {
   .mt-#{$i} {
-    margin-top:#{$i}rem;
+    margin-top:#{$i}rem !important;
   }
 }
 @for $i from -100 through 100 {
@@ -105,19 +105,38 @@ html, body {
   opacity: 1;
   transition: opacity 500ms ease-in-out;
 }
-.member-exit {
-  opacity: 1;
-}
-.member-exit-active {
-  opacity: 0;
-  transition: opacity 200ms ease-out;
-}
+// .member-exit {
+//   opacity: 1;
+//   transform:translateY(0);
+// }
+// .member-exit-active {
+//   opacity: 0;
+//   transform:translateY(-500px);
+//   transition-property: opacity, transform;
+//   transition: 200ms ease-out;
+// }
 
 
 .smaller {
   transform:scale(0.5,0.6);
+  padding:4px 16px !important;
+  box-sizing:border-box;
+  min-width:48px;
+
+  .material-icons {
+    line-height:16px;
+  }
+  
 }
 
 .material-icons{
   user-select:none;
+
+  @media screen and (max-width:500px) {
+  }
+}
+
+.party>.transition>.col {
+   padding: 0 2rem !important;
+   margin:0 !important;
 }

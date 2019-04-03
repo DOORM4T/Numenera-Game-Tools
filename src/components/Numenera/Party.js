@@ -4,8 +4,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default function Party(props) {
   return (
-    <div className="row">
-      <TransitionGroup>
+    <div className="party row mt-2">
+      <TransitionGroup className="transition">
         {
           props.party.map((member, index) =>
             <CSSTransition
@@ -13,7 +13,7 @@ export default function Party(props) {
               timeout={100}
               classNames="member"
             >
-              <div className="col m12 l6 xl6" key={member.id}>
+              <div className="col m12 l6" key={member.id}>
                 <CharacterInfo
                   index={index}
                   id={member.id}
@@ -41,6 +41,7 @@ export default function Party(props) {
           )
         }
       </TransitionGroup>
-    </div>
+
+    </div >
   )
 }

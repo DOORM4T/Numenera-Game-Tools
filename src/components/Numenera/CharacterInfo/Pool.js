@@ -1,5 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
+import M from 'materialize-css';
 import { UpdateContext } from '../NumeneraLayout';
+
 
 // Component for Character Pools 
 export default function Pool(props) {
@@ -33,10 +35,15 @@ export default function Pool(props) {
       updateMember(props.id, `${type}Current`, count); // Current pool
   });
 
+  // Tooltips
+  useEffect(() => {
+    M.Tooltip.init(document.querySelectorAll('.tooltipped'), {});
+  }, []);
+
   return (
     <div className={`collection-item row ${count === 0 ? 'red lighten-4' : ''} ${count >= max ? 'green lighten-4' : ''} ${(count < max / 3 && count !== 0) ? 'yellow lighten-4' : ''}`}>
-      <span className="col s9 valign-wrapper">
-        <i className="material-icons">
+      <span className="col s7 valign-wrapper">
+        <i className="material-icons tooltipped" data-position="left" data-tooltip={`${type} Pool, Edge: ${edge}`}>
           {
             (type === 'might')
               ? 'fitness_center'
@@ -50,8 +57,7 @@ export default function Pool(props) {
         <button className="green white-text btn waves-effect waves-light smaller" onClick={() => updatePool(+1)}><i className="material-icons">add</i></button>
         <button className="btn smaller waves-effect waves-light" onClick={() => updatePool(0)}><i className="material-icons">refresh</i></button>
       </span>
-
-      <span className="col s3 valign-wrapper mt-half"><i className="material-icons mr-half">arrow_upward</i>{edge}</span>
+      <span className="col s1 offset-s3 valign-wrapper mt-half hide-on-small-only"><i className="material-icons mr-half">arrow_upward</i>{edge}</span>
     </div>
   )
 }
