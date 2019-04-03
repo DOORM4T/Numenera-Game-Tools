@@ -4,11 +4,15 @@ import { UpdateContext } from '../NumeneraLayout';
 // Component for Character Pools 
 export default function Pool(props) {
   // Types = Might, Intellect, Speed
+  // Pool Max/Edge is recieved from UpdateContext
+  let member = useContext(UpdateContext).party.find(member => member.id === props.id);
   const [type] = useState(props.type);
-  const [max] = useState(props.max);
-  const [edge] = useState(props.edge);
+  const max = parseInt(member[`${type}Pool`]);
+  const edge = parseInt(member[`${type}Edge`]);
+
   const [count, setCount] = useState(max + props.diff); // Initial Count = max + stored difference (which is saved in localStorage)
   const [updated, setUpdated] = useState(0); // Count #times updated => used to prevent excessive useEffect calls
+
 
   const updatePool = (amt) => {
     setUpdated(updated + 1);
@@ -18,7 +22,7 @@ export default function Pool(props) {
 
   // Use Context to update member state with updateMember
   // Used to save current pool values
-  const updateMember = useContext(UpdateContext);
+  const { updateMember } = useContext(UpdateContext);
   useEffect(() => {
     if (updated > 0) // Update only if state (count) changes
       updateMember(props.id, `${type}Diff`, count - max); // Updates Pool Difference of Character

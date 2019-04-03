@@ -52,7 +52,11 @@ export default function NewCharacter(props) {
 
   return (
     <>
-      <a href="#newMemberModal" className="mt-1 btn waves-effect waves-light modal-trigger">New Member</a>
+      <div className="fixed-action-btn">
+        <a href="#newMemberModal" className="mt-1 btn-floating btn-large red waves-effect waves-light modal-trigger tooltipped" data-position="left" data-tooltip="Add Member">
+          <i className="material-icons">group_add</i>
+        </a>
+      </div>
       <div id="newMemberModal" className="modal">
         <h3 className="center">New Party Member</h3>
         <div className="row">
@@ -136,8 +140,6 @@ export default function NewCharacter(props) {
                 <label htmlFor="intEdge">Int Edge</label>
               </div>
             </div>
-
-
 
             <button className="modal-close right mt-1 mb-1 btn light-blue waves-effect waves-light"
               onClick={(e) => {

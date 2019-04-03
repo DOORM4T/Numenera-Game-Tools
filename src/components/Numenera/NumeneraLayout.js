@@ -1,8 +1,9 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { isNull } from 'util';
 import uuid from 'uuid';
 import Party from './Party';
 import NewCharacter from './NewCharacter';
-import { isNull } from 'util';
+import EditModal from './CharacterInfo/EditModal';
 
 // Context for Party Updating functionality
 export const UpdateContext = createContext();
@@ -10,6 +11,8 @@ export const UpdateContext = createContext();
 export default function NumeneraLayout() {
   // List of Party Members
   const [party, setParty] = useState([]);
+  const [modal, showModal] = useState(true);
+  const [editMember, setEditMember] = useState({});
 
   // Function for Creating New Party Members
   const addMember = (member) => {
@@ -43,17 +46,25 @@ export default function NumeneraLayout() {
     setParty(members);
   }
 
+  // Show Edit Modal
+  const showEdit = (id) => {
+    // Get Member by ID. Member Data => State => Edit Modal
+    setEditMember(party.find(member => member.id === id));
+    showModal(true);
+  }
+
+  // Edit Member
   const updateMember = (id, property, updatedValue) => {
     let index; // Index of party that will be updated
 
     // Get Member by ID
-    let updatedMember = party.filter((member, i) => {
+    let updatedMember = party.find((member, i) => {
       if (member.id === id) {
         index = i;
         return true;
       }
       return false;
-    })[0];
+    });
 
     if (updatedMember[property] === updatedValue)
       return; // Exit if property doesn't need to be updated
@@ -77,13 +88,16 @@ export default function NumeneraLayout() {
   });
 
   return (
-    <UpdateContext.Provider value={updateMember}>
+    <UpdateContext.Provider value={{ party, updateMember }}>
       <div className="container">
-        {/* Form for new party members */}
+        {/* Modal Form for new party members */}
         <NewCharacter addMember={addMember} />
-
+        {/* Edit Modal */}
+        {
+          (modal && Object.keys(editMember).length > 0) ? <EditModal member={editMember} updateMember={updateMember} showModal={showModal} /> : ''
+        }
         {/* Party List */}
-        <Party party={party} removeMember={removeMember} />
+        <Party party={party} removeMember={removeMember} showEdit={showEdit} />
       </div>
     </ UpdateContext.Provider>
   )

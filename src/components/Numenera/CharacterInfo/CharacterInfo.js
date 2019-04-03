@@ -26,7 +26,7 @@ export default function CharacterInfo(props) {
         </div>
       </div>
       {/* Edit Button */}
-      <button className="btn-floating blue waves-effect waves-light right mt--3 mr-2"><i className="material-icons">edit</i></button>
+      <button onClick={() => props.showEdit(props.id)} className="btn-floating blue waves-effect waves-light right mt--3 mr-2"><i className="material-icons">edit</i></button>
       {/* Remove Button */}
       <button onClick={() => props.removeMember(props.id)} className="btn-floating red waves-effect waves-light right mt--3 mr-6"><i className="material-icons">delete</i></button>
       <StatSheet

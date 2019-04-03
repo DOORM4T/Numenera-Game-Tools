@@ -33,6 +33,7 @@ export default function Party(props) {
                   mightEdge={member.mightEdge}
                   speedEdge={member.speedEdge}
                   intEdge={member.intEdge}
+                  showEdit={props.showEdit}
                   removeMember={props.removeMember}
                 />
               </div>
