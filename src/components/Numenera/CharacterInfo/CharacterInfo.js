@@ -9,27 +9,27 @@ export default function CharacterInfo(props) {
 
   return (
     <div className="row">
-      <div className="card medium col s12 z-depth-2 hoverable" key={props.id}>
+      <div className="card large col s12 z-depth-2 hoverable" key={props.id}>
         {/* Edit Button */}
         <button onClick={() => props.showEdit(props.id)} className="activator btn-floating blue waves-effect waves-light right halfway-fab mb-17"><i className="material-icons">edit</i></button>
         {/* Remove Button */}
         <button onClick={() => props.removeMember(props.id)} className="btn-floating red waves-effect waves-light right halfway-fab mb-17 mr-4"><i className="material-icons">delete</i></button>
         <div className="card-content p-1 pr-2">
           <div className="row">
-            <div className="col s12 m6">
-              <h4 className="card-title" >{props.name}</h4>
+            <div className="col s12">
+              <h4 className="card-title" >{props.name ? props.name : "Unnamed Character"}</h4>
               {/* Level/Experience/Effort Points */}
               <p className="" style={{ fontSize: '16px' }}>
                 Lvl: {props.level}
-                &nbsp;&nbsp;Effort: {props.effort}
+                &nbsp;&nbsp;Eff: {props.effort}
                 &nbsp;&nbsp;XP: {props.xp}
               </p>
             </div>
-            <div className="col s6 mt-1 hide-on-small-only">
-              <h6 className="grey-text tooltipped" data-position="bottom" data-tooltip={`${slug}`} style={{ wordBreak: 'break-word' }}>
+            <div className="col s12 mt-1 hide-on-small-only">
+              <h6 className="grey-text tooltipped" data-position="bottom" data-tooltip={`${slug}`} style={{ wordBreak: 'break-all' }}>
                 {
-                  slug.length > 100
-                    ? slug.substring(0, 100) + '...'
+                  slug.length > 80
+                    ? slug.substring(0, 80) + '...'
                     : slug
                 }
               </h6>

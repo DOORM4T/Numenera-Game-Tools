@@ -33,17 +33,29 @@ export default function NewCharacter(props) {
       intEdge: parseInt(intEdge),
     };
     props.addMember(newMember);
+    setName('Unnamed Character');
+    setJob('Glaive');
+    setDescriptors('[...]');
+    setFoci('[...]');
+    setLevel(1);
+    setXP(0);
+    setEffort(1);
+    setMightPool(10);
+    setSpeedPool(10);
+    setIntPool(10);
+    setMightEdge(0);
+    setSpeedEdge(0);
+    setIntEdge(0);
   }
 
   return (
     <>
       <div className="fixed-action-btn">
-        <a href="#newMemberModal" className="mt-1 btn-floating btn-large red waves-effect waves-light modal-trigger tooltipped" data-position="left" data-tooltip="Add Member">
+        <a href="#newMemberModal" className="mt-1 btn-floating btn-large red waves-effect waves-light modal-trigger">
           <i className="material-icons">group_add</i>
         </a>
       </div>
       <div id="newMemberModal" className="modal" >
-        <h3 className="center">New Party Member</h3>
         <div className="row">
           <form id='addForm' className="col s12" onSubmit={(e) => {
             e.preventDefault();
@@ -62,12 +74,12 @@ export default function NewCharacter(props) {
             <div id="details" className="tab mt-4">
               <div className="row">
                 {/* Member Name */}
-                <div className="col s9 input-field">
+                <div className="col s6 input-field">
                   <input id="name" type="text" onChange={(e) => setName(e.target.value)}></input>
                   <label htmlFor="name">Name</label>
                 </div>
                 {/* Job */}
-                <div className="col s3 input-field">
+                <div className="col s6 input-field">
                   <select className="select" id="job" onChange={(e) => setJob(e.target.value)}>
                     <option value="Glaive">Glaive</option>
                     <option value="Nano">Nano</option>

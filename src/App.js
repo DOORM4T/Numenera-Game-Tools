@@ -13,7 +13,8 @@ export default function App() {
     M.Modal.init(document.querySelectorAll('.modal'), {
       inDuration: 200,
       outDuration: 100,
-      opacity: 0.8
+      opacity: 0.8,
+      preventScrolling:true
     });
   }, []);
 

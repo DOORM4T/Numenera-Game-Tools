@@ -13,7 +13,7 @@ export default function Party(props) {
               timeout={100}
               classNames="member"
             >
-              <div className="col m12 l6" key={member.id}>
+              <div className="col s12 m12 l12 xl6" key={member.id}>
                 <CharacterInfo
                   member={member}
                   index={index}

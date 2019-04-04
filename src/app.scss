@@ -171,9 +171,10 @@ input[type="number"] {
     color: #2196f3 !important;
   }
   
-  input[value=""]+label.active {
+  input:focus+label.active {
     color: #2196f3 !important;
   }
+
 }
 
 #addForm {
@@ -189,4 +190,8 @@ input[type="number"] {
 
 .card-reveal {
   overflow:hidden !important;
+}
+
+.card {
+  max-height: 100vh !important;
 }
