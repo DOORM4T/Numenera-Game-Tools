@@ -2,16 +2,18 @@
 A "Drunken Headhunters" project
 
 ## Features
+- Progressive Web App (Works offline/has downloadable native app!)
+Current PWA build can be accessed at: https://tabletop-tavern.netlify.com/
+
 ### Numenera Game Tools
 - Character Creation Outline
 - Stat Pool manipulation
 - Local storage -- now you won't have to remember what the pools from the last session were!
 
 ## Todo:
-- Edit functionality
 - Classier form
+- Landing page + routes
 - Autofill
-- Custom Favicon
 - Dice Roller
 - D&D Game Tools!
 - Database & User Auth?
