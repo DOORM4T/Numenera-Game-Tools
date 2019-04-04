@@ -22,15 +22,15 @@ export default function EditTabs(props) {
         (member !== null) ? (
           // Tabs 
           <div className="row">
-            <div className="col s12">
+            <div className="card-tabs col s12">
               <ul className="tabs z-depth-1">
-                <li className="tab col s6"><a className="" href={`#details-${props.id}`}><i className="material-icons mt-1">person</i></a></li>
+                <li className="tab col s6"><a className="active" href={`#details-${props.id}`}><i className="material-icons mt-1">person</i></a></li>
                 <li className="tab col s6"><a href={`#stats-${props.id}`}><i className="material-icons mt-1">tune</i></a></li>
               </ul>
             </div>
             {/* Tab Content */}
             {/* Details */}
-            <div id={`details-${props.id}`} className="col s12 mt-1 row">
+            <div id={`details-${props.id}`} className="card-content col s12 row">
               {/* Member Name */}
               <div className="input-field col s6">
                 <input id="name" type="text" onChange={(e) => handleChange('name', e.target.value)} value={member.name}></input>
@@ -57,7 +57,7 @@ export default function EditTabs(props) {
                 <label htmlFor="foci" className="active">Foci</label>
               </div>
             </div>
-            <div id={`stats-${props.id}`} className="col s12 mt-1">
+            <div id={`stats-${props.id}`} className="card-content col s12">
               <div className="row">
                 {/* level */}
                 <div className="col s4 input-field">

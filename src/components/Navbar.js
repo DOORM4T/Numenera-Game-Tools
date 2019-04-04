@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="nav-wrapper container">
         <Link className="brand-logo left niconne" to='/'>Tabletop Tavern</Link>
         <ul id="nav-mobile" className="right hide-on-small-and-down">
-          <li>
+          {/* <li>
             <Link to='#'>One</Link>
           </li>
           <li>
@@ -15,7 +15,7 @@ export default function Navbar() {
           </li>
           <li>
             <Link to='#'>Three</Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>
