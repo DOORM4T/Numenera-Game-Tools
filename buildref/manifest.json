@@ -1,8 +1,8 @@
 {
   "name": "Tabletop Tavern",
   "short_name": "Tabletop Tavern",
-  "theme_color": "#f32134",
-  "background_color": "#f32121",
+  "theme_color": "#24292e",
+  "background_color": "#24292e",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/",

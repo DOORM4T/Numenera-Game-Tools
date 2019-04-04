@@ -32,12 +32,12 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DOORM4T/Numenera-Game-Tools.git"
+    "url": "git+https://github.com/DOORM4T/Tabletop-Tavern.git"
   },
   "author": "Matt Seto",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DOORM4T/Numenera-Game-Tools/issues"
+    "url": "https://github.com/DOORM4T/Tabletop-Tavern/issues"
   },
-  "homepage": "https://github.com/DOORM4T/Numenera-Game-Tools#readme"
+  "homepage": "https://github.com/DOORM4T/Tabletop-Tavern#readme"
 }
