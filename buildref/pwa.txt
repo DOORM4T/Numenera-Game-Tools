@@ -1,0 +1,28 @@
+Steps to make project into PWA:
+
+1. npm run build
+    - Creates Serviceworker stuff
+
+2. Create Manifest
+    - https://app-manifest.firebaseapp.com
+    - Upload 512x512 Icon
+    - Start URL & Application Scope = "/"
+    - Add Manifest & Icons folder to build folder
+
+3. Register Serviceworker
+    - Add this to index.html:
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+
+4. Replace all instances of "DOORM4T/Tabletop-Tavern/" with "./" in: 
+    - "index.html"
+    - "asset-manifest.json"
+    - "precache-manifest.js"
+    - "service-worker.js"
+
+5. Should work. Can deploy build folder.
