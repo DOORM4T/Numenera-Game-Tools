@@ -4,10 +4,26 @@ Steps to make project into PWA:
     - Creates Serviceworker stuff
 
 2. Create Manifest
+
+    Copy "manifest.json" in "buildref" folder
+
+    or 
+    
+    Manual Steps:
     - https://app-manifest.firebaseapp.com
     - Upload 512x512 Icon
     - Start URL & Application Scope = "/"
     - Add Manifest & Icons folder to build folder
+    - Add this to the end: 
+
+      "prefer_related_applications": true,
+      "related_applications": 
+      [
+        {
+          "platform": "play",
+          "id": "com.google.samples.apps.iosched"
+        }
+      ]
 
 3. Register Serviceworker
     - Add this to index.html:
