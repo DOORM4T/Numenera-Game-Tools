@@ -42,7 +42,7 @@ export default function NewCharacter(props) {
           <i className="material-icons">group_add</i>
         </a>
       </div>
-      <div id="newMemberModal" className="modal">
+      <div id="newMemberModal" className="modal" >
         <h3 className="center">New Party Member</h3>
         <div className="row">
           <form id='addForm' className="col s12" onSubmit={(e) => {
@@ -51,85 +51,97 @@ export default function NewCharacter(props) {
             document.getElementById('addForm').reset();
           }
           }>
-            <div className="row">
-              {/* Member Name */}
-              <div className="col s9 input-field">
-                <input id="name" type="text" onChange={(e) => setName(e.target.value)}></input>
-                <label htmlFor="name">Name</label>
+            {/* Tabs */}
+            <div className="col s12">
+              <ul className="tabs z-depth-1">
+                <li className="tab col s6"><a className="" href="#details"><i className="material-icons mt-1">person</i></a></li>
+                <li className="tab col s6"><a href="#stats"><i className="material-icons mt-1">tune</i></a></li>
+              </ul>
+            </div>
+            {/* Details */}
+            <div id="details" className="tab mt-4">
+              <div className="row">
+                {/* Member Name */}
+                <div className="col s9 input-field">
+                  <input id="name" type="text" onChange={(e) => setName(e.target.value)}></input>
+                  <label htmlFor="name">Name</label>
+                </div>
+                {/* Job */}
+                <div className="col s3 input-field">
+                  <select className="select" id="job" onChange={(e) => setJob(e.target.value)}>
+                    <option value="Glaive">Glaive</option>
+                    <option value="Nano">Nano</option>
+                    <option value="Jack">Jack</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <label htmlFor="job">Job</label>
+                </div>
               </div>
-              {/* Job */}
-              <div className="col s3 input-field">
-                <select className="select" id="job" onChange={(e) => setJob(e.target.value)}>
-                  <option value="Glaive">Glaive</option>
-                  <option value="Nano">Nano</option>
-                  <option value="Jack">Jack</option>
-                  <option value="Other">Other</option>
-                </select>
-                <label htmlFor="job">Job</label>
+              {/* Descriptors */}
+              <div className="input-field">
+                <input id="descriptors" type="text" onChange={(e) => setDescriptors(e.target.value)}></input>
+                <label htmlFor="descriptors">Descriptor(s)</label>
+              </div>
+              {/* Foci */}
+              <div className="input-field mt-3">
+                <input id="foci" type="text" onChange={(e) => setFoci(e.target.value)}></input>
+                <label htmlFor="foci">Foci</label>
               </div>
             </div>
-            {/* Descriptors */}
-            <div className="input-field">
-              <input id="descriptors" type="text" onChange={(e) => setDescriptors(e.target.value)}></input>
-              <label htmlFor="descriptors">Descriptor(s)</label>
-            </div>
-            {/* Foci */}
-            <div className="input-field">
-              <input id="foci" type="text" onChange={(e) => setFoci(e.target.value)}></input>
-              <label htmlFor="foci">Foci</label>
-            </div>
-            <div className="row">
-              {/* level */}
-              <div className="col s4 input-field">
-                <input id="level" type="text" onChange={(e) => setLevel(e.target.value)}></input>
-                <label htmlFor="level">Level</label>
+            {/* Stats */}
+            <div id="stats" className="tab mt-2">
+              <div className="row">
+                {/* level */}
+                <div className="col s4 input-field">
+                  <input id="level" type="text" onChange={(e) => setLevel(e.target.value)}></input>
+                  <label htmlFor="level">Level</label>
+                </div>
+                {/* xp */}
+                <div className="col s4 input-field">
+                  <input id="xp" type="text" onChange={(e) => setXP(e.target.value)}></input>
+                  <label htmlFor="xp">XP</label>
+                </div>
+                {/* effort */}
+                <div className="col s4 input-field">
+                  <input id="effort" type="text" onChange={(e) => setEffort(e.target.value)}></input>
+                  <label htmlFor="effort">Effort</label>
+                </div>
               </div>
-              {/* xp */}
-              <div className="col s4 input-field">
-                <input id="xp" type="text" onChange={(e) => setXP(e.target.value)}></input>
-                <label htmlFor="xp">XP</label>
+              <div className="row">
+                {/* Might Pool */}
+                <div className="col s4 input-field">
+                  <input id="mightPool" type="number" onChange={(e) => setMightPool(e.target.value)}></input>
+                  <label htmlFor="mightPool">Might Pool</label>
+                </div>
+                {/* Speed Pool */}
+                <div className="col s4 input-field">
+                  <input id="speedPool" type="number" onChange={(e) => setSpeedPool(e.target.value)}></input>
+                  <label htmlFor="speedPool">Speed Pool</label>
+                </div>
+                {/* Intellect Pool */}
+                <div className="col s4 input-field">
+                  <input id="intPool" type="number" onChange={(e) => setIntPool(e.target.value)}></input>
+                  <label htmlFor="intPool">Int Pool</label>
+                </div>
               </div>
-              {/* effort */}
-              <div className="col s4 input-field">
-                <input id="effort" type="text" onChange={(e) => setEffort(e.target.value)}></input>
-                <label htmlFor="effort">Effort</label>
-              </div>
-            </div>
-            <div className="row">
-              {/* Might Pool */}
-              <div className="col s4 input-field">
-                <input id="mightPool" type="number" onChange={(e) => setMightPool(e.target.value)}></input>
-                <label htmlFor="mightPool">Might Pool</label>
-              </div>
-              {/* Speed Pool */}
-              <div className="col s4 input-field">
-                <input id="speedPool" type="number" onChange={(e) => setSpeedPool(e.target.value)}></input>
-                <label htmlFor="speedPool">Speed Pool</label>
-              </div>
-              {/* Intellect Pool */}
-              <div className="col s4 input-field">
-                <input id="intPool" type="number" onChange={(e) => setIntPool(e.target.value)}></input>
-                <label htmlFor="intPool">Int Pool</label>
-              </div>
-            </div>
-            <div className="row">
-              {/* Might Edge */}
-              <div className="col s4 input-field">
-                <input id="mightEdge" type="number" onChange={(e) => setMightEdge(e.target.value)}></input>
-                <label htmlFor="mightEdge">Might Edge</label>
-              </div>
-              {/* Speed Edge */}
-              <div className="col s4 input-field">
-                <input id="speedEdge" type="number" onChange={(e) => setSpeedEdge(e.target.value)}></input>
-                <label htmlFor="speedEdge">Speed Edge</label>
-              </div>
-              {/* Intellect Edge */}
-              <div className="col s4 input-field">
-                <input id="intEdge" type="number" onChange={(e) => setIntEdge(e.target.value)}></input>
-                <label htmlFor="intEdge">Int Edge</label>
+              <div className="row">
+                {/* Might Edge */}
+                <div className="col s4 input-field">
+                  <input id="mightEdge" type="number" onChange={(e) => setMightEdge(e.target.value)}></input>
+                  <label htmlFor="mightEdge">Might Edge</label>
+                </div>
+                {/* Speed Edge */}
+                <div className="col s4 input-field">
+                  <input id="speedEdge" type="number" onChange={(e) => setSpeedEdge(e.target.value)}></input>
+                  <label htmlFor="speedEdge">Speed Edge</label>
+                </div>
+                {/* Intellect Edge */}
+                <div className="col s4 input-field">
+                  <input id="intEdge" type="number" onChange={(e) => setIntEdge(e.target.value)}></input>
+                  <label htmlFor="intEdge">Int Edge</label>
+                </div>
               </div>
             </div>
-
             <button className="modal-close right mt-1 mb-1 btn light-blue waves-effect waves-light">Add Member</button>
           </form>
         </div>

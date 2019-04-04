@@ -1,5 +1,6 @@
 import React from 'react'
 import StatSheet from './StatSheet';
+import EditForm from './EditForm';
 
 // Character Component
 export default function CharacterInfo(props) {
@@ -10,7 +11,7 @@ export default function CharacterInfo(props) {
     <div className="row">
       <div className="card medium col s12 z-depth-2 hoverable" key={props.id}>
         {/* Edit Button */}
-        <a href="#editModal" onClick={() => props.showEdit(props.id)} className="modal-trigger btn-floating blue waves-effect waves-light right halfway-fab mb-17"><i className="material-icons">edit</i></a>
+        <button onClick={() => props.showEdit(props.id)} className="activator btn-floating blue waves-effect waves-light right halfway-fab mb-17"><i className="material-icons">edit</i></button>
         {/* Remove Button */}
         <button onClick={() => props.removeMember(props.id)} className="btn-floating red waves-effect waves-light right halfway-fab mb-17 mr-4"><i className="material-icons">delete</i></button>
         <div className="card-content p-1 pr-2">
@@ -48,6 +49,9 @@ export default function CharacterInfo(props) {
             speedEdge={props.speedEdge}
             intEdge={props.intEdge}
           />
+        </div>
+        <div className="card-reveal">
+          <EditForm member={props.member} />
         </div>
       </div>
     </div>

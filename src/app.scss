@@ -116,7 +116,7 @@ html, body {
 //   transition: 200ms ease-out;
 // }
 
-
+// Smaller Pool Buttons
 .smaller {
   transform:scale(0.5,0.6);
   padding:4px 16px !important;
@@ -125,18 +125,64 @@ html, body {
 
   .material-icons {
     line-height:16px;
-  }
-  
+  }  
 }
 
 .material-icons{
   user-select:none;
-
-  @media screen and (max-width:500px) {
-  }
 }
 
+// Party Grid
 .party>.transition>.col {
    padding: 0 2rem !important;
    margin:0 !important;
+}
+
+// Override Tab colors
+.tabs {
+  .tab { // Text
+    a {
+      color:#000 !important;
+
+      &:hover {
+        background-color:#eee !important;
+        color: #2196f3 !important;
+      }
+
+      &.active {
+        background-color:#ccc !important;
+        color:#2196f3 !important;
+      }
+    }
+  }
+  .indicator { // Underline
+    background-color:#2196f3 !important;
+    height:3px !important;
+  } 
+}
+
+input[type="number"] {
+  text-align:center !important;
+}
+
+.input-field {
+  input:focus {
+    border-color: #2196f3 !important;
+    color: #2196f3 !important;
+  }
+  
+  input[value=""]+label.active {
+    color: #2196f3 !important;
+  }
+}
+
+#addForm {
+  label.active {
+    color: #2196f3 !important;
+  }
+}
+
+
+.modal {
+  padding: 4rem 2rem 0 2rem !important;
 }

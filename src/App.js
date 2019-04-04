@@ -11,8 +11,9 @@ export default function App() {
   useEffect(() => {
     M.AutoInit();
     M.Modal.init(document.querySelectorAll('.modal'), {
-      inDuration: 0,
-      outDuration: 0
+      inDuration: 200,
+      outDuration: 100,
+      opacity: 0.8
     });
   }, []);
 

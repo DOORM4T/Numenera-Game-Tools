@@ -15,6 +15,7 @@ export default function Party(props) {
             >
               <div className="col m12 l6" key={member.id}>
                 <CharacterInfo
+                  member={member}
                   index={index}
                   id={member.id}
                   name={member.name}

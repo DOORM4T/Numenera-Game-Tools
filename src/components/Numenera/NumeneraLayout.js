@@ -3,7 +3,6 @@ import { isNull } from 'util';
 import uuid from 'uuid';
 import Party from './Party';
 import NewCharacter from './NewCharacter';
-import EditModal from './CharacterInfo/EditModal';
 
 // Context for Party Updating functionality
 export const UpdateContext = createContext();
@@ -92,8 +91,6 @@ export default function NumeneraLayout() {
       <div className="container">
         {/* Modal Form for new party members */}
         <NewCharacter addMember={addMember} />
-        {/* Edit Modal */}
-        <EditModal member={editMember} updateMember={updateMember} show={modal} />
         {/* Party List */}
         <Party party={party} removeMember={removeMember} showEdit={showEdit} />
       </div>
