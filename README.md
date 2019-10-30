@@ -1,5 +1,4 @@
-# Tabletop Tavern
-A "Drunken Headhunters" project
+# Project Headhunter: Tabletop Tavern
 
 ## Features
 - Progressive Web App (Works offline/has downloadable native app!)
